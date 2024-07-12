@@ -5,11 +5,11 @@ using UnityEngine;
 public class WeaponFollower : MonoBehaviour
 {
     public Transform target;
-    public float followSpeed;
+    public float rotationFollowSpeed;
 
-    private void Update()
+    private void LateUpdate()
     {
         transform.position = target.position;
-        transform.rotation = Quaternion.Lerp(transform.rotation, target.rotation, followSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, rotationFollowSpeed * Time.deltaTime);
     }
 }
