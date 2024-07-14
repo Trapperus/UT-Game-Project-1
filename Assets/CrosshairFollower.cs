@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class CrosshairFollower : MonoBehaviour
 {
     public Transform crosshairTarget;
     public float sensitivity;
@@ -19,6 +19,6 @@ public class Test : MonoBehaviour
         transform.Translate(moveAmount, Space.Self);
 
         // Smoothly move the crosshair back to the crosshair target
-        transform.position = Vector3.Lerp(transform.position, crosshairTarget.position, Time.deltaTime * 5.0f);
+        transform.position = Vector3.Lerp(transform.position, crosshairTarget.position, 5.0f * Time.deltaTime);
     }
 }

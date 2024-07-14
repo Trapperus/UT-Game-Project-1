@@ -9,10 +9,10 @@ public class WeaponFollower : MonoBehaviour
 
     private void LateUpdate()
     {
-        //Sets the weapon position to the target position
-        transform.position = target.position;
-
-        //Moves the weapon rotation smoothly to the targets rotation
+        // Moves the weapon rotation smoothly to the targets rotation
         transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, rotationFollowSpeed * Time.deltaTime);
+
+        // Sets the weapon position to the target position
+        transform.position = target.position;
     }
 }
